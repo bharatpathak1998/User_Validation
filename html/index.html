@@ -16,6 +16,10 @@
       <input type="email" name="email" id="email" placeholder="Enter Email-Id">
       <error-output class="email-error" for="email"></error-output>
     </div>
+    <div class="form-field">
+      <input name="number" id="number" placeholder="Enter Mobile Number">
+      <error-output class="number-error" for="number"></error-output>
+    </div>
   </form>
   <script>
     // UC1 - Validate First Name Using RegExp
@@ -38,6 +42,17 @@
         emailError.textContent = ""
       } else {
         emailError.textContent = "Invalid"
+      }
+    });
+    // UC3 - Validate Mobile Number Using RegExp
+    const number = document.querySelector('#number')
+    const numberError = document.querySelector('.number-error')
+    number.addEventListener('input', function () {
+      let phoneNumberRegex = RegExp("^[0-9]{2}[ ][0-9]{10}")
+      if (phoneNumberRegex.test(number.value)) {
+        numberError.textContent = ""
+      } else {
+        numberError.textContent = "Invalid"
       }
     });
   </script>

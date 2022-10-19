@@ -53,6 +53,13 @@ form .form-field:nth-child(2)::before {
   top: 15px;
 }
 
+form .form-field:nth-child(3)::before {
+  background-image: url(../assets/phone-icon.png);
+  width: 20px;
+  height: 20px;
+  top: 15px;
+}
+
 form .form-field {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,6 +110,6 @@ error-output {
   color: red;
 }
 
-input {
+input{
   flex: auto;
 }
