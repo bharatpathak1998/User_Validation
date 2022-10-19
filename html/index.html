@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Validation Page</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="bg"></div>
+  <form>
+    <div class="form-field">
+      <input type="text" name="text" id="text" placeholder="Enter First Name">
+      <error-output class="text-error" for="text"></error-output>
+    </div>
+  </form>
+  <script>
+    // UC1 - Validate First Name Using RegExp
+    const name = document.querySelector('#text')
+    const textError = document.querySelector('.text-error')
+    text.addEventListener('input', function () {
+      let nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}$")
+      if (nameRegex.test(name.value)) {
+        textError.textContent = ""
+      } else {
+        textError.textContent = "Invalid"
+      }
+    });
+  </script>
+</body>
+</html>
