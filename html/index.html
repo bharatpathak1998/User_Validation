@@ -20,6 +20,11 @@
       <input name="number" id="number" placeholder="Enter Mobile Number">
       <error-output class="number-error" for="number"></error-output>
     </div>
+    <div class="form-field">
+      <input name="password" id="password" placeholder="Enter Password">
+      <error-output class="password-error" for="password"></error-output>
+    </div>
+    <button>SUBMIT</button>
   </form>
   <script>
     // UC1 - Validate First Name Using RegExp
@@ -53,6 +58,17 @@
         numberError.textContent = ""
       } else {
         numberError.textContent = "Invalid"
+      }
+    });
+    //UC4 - Validate Password Using RegExp
+    const password = document.querySelector('#password')
+    const passwordError = document.querySelector('.password-error')
+    password.addEventListener('input', function () {
+      let passwordRegex = RegExp("(?=.*[A-Z]+)(?=.*[0-9]+).{8,}")
+      if (passwordRegex.test(password.value)) {
+        passwordError.textContent = ""
+      } else {
+        passwordError.textContent = "Invalid"
       }
     });
   </script>

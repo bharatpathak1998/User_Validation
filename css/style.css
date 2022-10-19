@@ -60,6 +60,13 @@ form .form-field:nth-child(3)::before {
   top: 15px;
 }
 
+form .form-field:nth-child(4)::before {
+  background-image: url(../assets/password-icon.png);
+  width: 20px;
+  height: 20px;
+  top: 15px;
+}
+
 form .form-field {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,6 +117,17 @@ error-output {
   color: red;
 }
 
-input{
+input {
   flex: auto;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
