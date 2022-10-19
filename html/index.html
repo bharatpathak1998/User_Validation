@@ -12,6 +12,10 @@
       <input type="text" name="text" id="text" placeholder="Enter First Name">
       <error-output class="text-error" for="text"></error-output>
     </div>
+    <div class="form-field">
+      <input type="email" name="email" id="email" placeholder="Enter Email-Id">
+      <error-output class="email-error" for="email"></error-output>
+    </div>
   </form>
   <script>
     // UC1 - Validate First Name Using RegExp
@@ -23,6 +27,17 @@
         textError.textContent = ""
       } else {
         textError.textContent = "Invalid"
+      }
+    });
+    // UC2 - Validate Email-Id Using RegExp
+    const email = document.querySelector('#email')
+    const emailError = document.querySelector('.email-error')
+    email.addEventListener('input', function () {
+      let emailRegex = RegExp("^[a-zA-Z0-9]+[.+-]?[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.][a-zA-Z]+[.]?[a-zA-Z]+[,]?$")
+      if (emailRegex.test(email.value)) {
+        emailError.textContent = ""
+      } else {
+        emailError.textContent = "Invalid"
       }
     });
   </script>
